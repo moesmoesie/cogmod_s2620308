@@ -27,42 +27,21 @@ void applyPower(int power, int motor){
 }
 
 
-
 void setup() {
   Serial.begin(9600);
-  // put your setup code here, to run once:
-//  delay(1000);
-//  leftMotor.run(100);
-//  rightMotor.run(-100);
-//  delay(1000);
-//  leftMotor.run(10);
-//  rightMotor.run(10);
 }
 
 void loop() {
-//  leftMotor.run(-100);
-//  applyPower(30, 0);
   float init_distance = usSensor.distanceCm();
   while(init_distance > 10){
     init_distance = usSensor.distanceCm();
-    Serial.print(init_distance);
-    applyPower(30, 0);
+    applyPower(80, 0);
   }
-  applyPower(15, 0);
-  delay(2000);
-  applyPower(0,0);
-  delay(1000);
-  applyPower(-30,0);
-  delay(700);
-  applyPower(20,1);
-  delay(1000);
-//  if(init_distance < 5){
-//    applyPower(10, 0);
-//    applyPower(30, 1);
-//  }
-  
-  // put your main code here, to run repeatedly:
-//  delay(1000);
-  
 
+  applyPower(30, 0);
+  delay(500);
+  applyPower(-50,0);
+  delay(700);
+  applyPower(50,1);
+  delay(600);
 }
